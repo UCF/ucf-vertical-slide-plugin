@@ -1,9 +1,9 @@
 === ucf-vertical-slide-plugin ===
 Contributors: ucfwebcom
-Requires at least: 5.3 {{Update as needed!}}
-Tested up to: 5.3 {{Update as needed!}}
+Requires at least: 5.3
+Tested up to: 5.3
 Stable tag: 0.0.0
-Requires PHP: 7.4 {{Update as needed!}}
+Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl-3.0.html
 
