@@ -1,0 +1,64 @@
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sliderParentRow {
+  position: relative;
+  transition: height 0.5s ease-in-out;
+}
+
+.sliderTextBox {
+  padding-top: 200px;
+  transition: opacity 0.5s ease-in-out;
+  animation: slideIn 1s ease-in-out;
+  opacity: 1; /* Set initial opacity to 1 */
+}
+
+#sliderPagination {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 990px) {
+  .sliderParentRow {
+      position: relative;
+  }
+  .sliderParentRow img {
+      width: 100%;
+  }
+  .sliderTextBox p {
+      text-shadow: black 0.1em 0.1em 0.2em;
+  }
+  .sliderTextBox {
+      position: absolute;
+      bottom: 0px;
+      padding: 10px;
+      text-align: center;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .employeeName {
+      font-size: 35px;
+      font-weight: bold;
+  }
+  .employeeTitle {
+      font-size: 25px;
+  }
+  .employeeDesc {
+      font-size: 15px;
+  }
+  #sliderPagination {
+      top: 23%;
+      right: -5%;
+  }
+}
