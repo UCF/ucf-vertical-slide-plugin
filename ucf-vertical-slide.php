@@ -41,7 +41,7 @@ if ( ! function_exists( 'ucf_vertical_slide_shortcode' ) ) {
 
 				$sliders_objects = get_field( 'vertical_sliders_fields' , $slider_id );
 				$my_json_data = json_encode($sliders_objects);
-				echo $my_json_data;
+				// echo $my_json_data;
 					}
 		?>
 
