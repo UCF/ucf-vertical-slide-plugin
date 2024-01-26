@@ -47,18 +47,18 @@ let circleBehavior = '';
 
 // Controllers
 const sliderContext = document.querySelector('#slider-context');
-const sliderPagination = document.querySelector('#sliderPagination');
+const sliderPagination = document.querySelector('#slider-pagination');
 
 faculties.forEach((element) => {
   const slide = `
       <div class="col-xs-12 col-lg-6 text-center text-light h-100">
           <img class="" src="${element.imageAddress}" alt="${element.title}"  />
       </div>
-      <div  class="col-xs-0 col-lg-6 text-light sliderTextBox">
-          <p class="employeeName display-4 font-weight-bold text-primary">${element.title}</p>
-          <p class="employeeTitle h3" >${element.subtitle}</p>
+      <div  class="col-xs-0 col-lg-6 text-light slider-text-box">
+          <p class="employee-name display-4 font-weight-bold text-primary">${element.title}</p>
+          <p class="employee-title h3" >${element.subtitle}</p>
           <br>
-          <p class="employeeDesc h5">${element.des}</p>
+          <p class="employee-desc h5">${element.des}</p>
       </div>`;
 
   slides.push(slide);

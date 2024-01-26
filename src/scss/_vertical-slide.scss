@@ -9,19 +9,19 @@
   }
 }
 
-.sliderParentRow {
+.slider-parent-row {
   position: relative;
   transition: height 0.5s ease-in-out;
 }
 
-.sliderTextBox {
+.slider-text-box {
   padding-top: 200px;
   transition: opacity 0.5s ease-in-out;
   animation: slideIn 1s ease-in-out;
   opacity: 1; /* Set initial opacity to 1 */
 }
 
-#sliderPagination {
+#slider-pagination {
   position: absolute;
   top: 50%;
   right: 0;
@@ -29,16 +29,16 @@
 }
 
 @media only screen and (max-width: 990px) {
-  .sliderParentRow {
+  .slider-parent-row {
       position: relative;
   }
-  .sliderParentRow img {
+  .slider-parent-row img {
       width: 100%;
   }
-  .sliderTextBox p {
+  .slider-text-box p {
       text-shadow: black 0.1em 0.1em 0.2em;
   }
-  .sliderTextBox {
+  .slider-text-box {
       position: absolute;
       bottom: 0px;
       padding: 10px;
@@ -47,17 +47,17 @@
 }
 
 @media only screen and (max-width: 425px) {
-  .employeeName {
+  .employee-name {
       font-size: 35px;
       font-weight: bold;
   }
-  .employeeTitle {
+  .employee-title {
       font-size: 25px;
   }
-  .employeeDesc {
+  .employee-desc {
       font-size: 15px;
   }
-  #sliderPagination {
+  #slider-pagination {
       top: 23%;
       right: -5%;
   }
