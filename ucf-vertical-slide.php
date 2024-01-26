@@ -17,6 +17,9 @@ define( 'UCF_VERTICAL_SLIDE__STATIC_URL', UCF_VERTICAL_SLIDE__PLUGIN_URL . '/sta
 define( 'UCF_VERTICAL_SLIDE__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'UCF_VERTICAL_SLIDE__FILEPATH', __FILE__ );
 
+// adding the custom post type path
+include_once 'includes/ucf-vertical-slider-posttype.php';
+
 // Shortcode function
 function ucf_vertical_slide_shortcode( $atts ) {
     ob_start();
@@ -28,6 +31,11 @@ function ucf_vertical_slide_shortcode( $atts ) {
     </div>
     <div id="sliderPagination"></div>
     </div>
+	<h1>
+	<?php
+	  the_field('silder_title');
+	?>
+	</h1>
     <?php
 
     return ob_get_clean();
@@ -49,3 +57,4 @@ function ucf_vertical_slide_enqueue_assets() {
 }
 
 add_action( 'wp_enqueue_scripts', 'ucf_vertical_slide_enqueue_assets', 10, 0 );
+
