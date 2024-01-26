@@ -4,8 +4,8 @@ if ( ! function_exists( 'ucf_vertical_slide_shortcode' ) ) {
 function ucf_vertical_slide_shortcode( $atts ) {
 	ob_start();
 	$defaults = array(
-		'slug' => 'default_slug',
-		'id' => 'default_id'
+		'slug' => '',
+		'id' => ''
 	);
 
 	// Getting the Id and Slug from shortcode
