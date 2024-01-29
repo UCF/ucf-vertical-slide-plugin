@@ -32,11 +32,14 @@
 			'supports'      => array( 'title' ),
 			'has_archive'   => true,
 			'show_in_rest'  => true,
-			'rest_base'     => 'vertical-sliders',
-
+			// 'rest_base'     => 'vertical-sliders',
 		);
 		register_post_type('vertical sliders', $args);
+
 	}
 
 	add_action('init', 'vertical_slider_register_cpt');
+
+
  }
+
