@@ -4,7 +4,7 @@
 		function slider_custom_rest_api () {
 			register_rest_field(
 				'verticalsliders',
-				'test-name',
+				'test_name',
 				array(
 				'get_callback' => 'get_custom_field'
 			));

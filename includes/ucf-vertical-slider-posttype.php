@@ -32,7 +32,7 @@
 			'supports'      => array( 'title' ),
 			'has_archive'   => true,
 			'show_in_rest'  => true,
-			// 'rest_base'     => 'vertical-sliders',
+			'rest_base'     => 'vertical_slider',
 		);
 		register_post_type('vertical sliders', $args);
 
