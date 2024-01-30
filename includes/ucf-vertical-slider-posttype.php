@@ -37,9 +37,6 @@
 		register_post_type('vertical_slider', $args);
 
 	}
-
 	add_action('init', 'vertical_slider_register_cpt');
-
-
  }
 
