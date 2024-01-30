@@ -22,7 +22,7 @@
 			'not_found'          => __( 'No sliders found' ),
 			'not_found_in_trash' => __( 'No sliders found in the Trash' ),
 			'parent_item_colon'  => __( 'Parent Sliders:' ),
-			'menu_name'          => __( 'Vertical Sliders' )
+			'menu_name'          => __( 'Vertical Sliders' ),
 		);
 		$args = array(
 			'labels'        => $labels,
@@ -31,9 +31,12 @@
 			'menu_position' => 5,
 			'supports'      => array( 'title' ),
 			'has_archive'   => true,
+			'show_in_rest'  => true,
+			'rest_base'     => 'vertical_slider',
 		);
-		register_post_type('vertical sliders', $args);
-	}
+		register_post_type('vertical_slider', $args);
 
+	}
 	add_action('init', 'vertical_slider_register_cpt');
  }
+

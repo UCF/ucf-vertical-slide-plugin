@@ -21,6 +21,8 @@ define( 'UCF_VERTICAL_SLIDE__FILEPATH', __FILE__ );
 include_once 'includes/ucf-vertical-slider-posttype.php';
 // Shortcode function
 include_once 'includes/ucf-vertical-slide-shortcode.php';
+//Adding the custom-rest-api-field.php
+include_once 'includes/custom-rest-api-field.php';
 // Adding assets (CSS/ JS)
 include_once 'includes/ucf-vertical-slide-assets.php'
 ?>
