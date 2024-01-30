@@ -12,14 +12,12 @@ function ucf_vertical_slide_shortcode( $atts ) {
 	$atts = shortcode_atts($defaults, $atts, 'ucf_vertical_slide');
 	$slider_slug = $atts['slug'];
 	$slider_id = $atts['id'];
+	global $my_json_data;
 
 	// Getting the data from UCF fields
 	if ( have_rows('vertical_sliders_fields' , $slider_id)){
-
 			$sliders_objects = get_field( 'vertical_sliders_fields' , $slider_id );
 			$my_json_data = json_encode($sliders_objects);
-			// echo $my_json_data;
-			// get_custom_field($my_json_data);
 		}
 	?>
 
@@ -30,7 +28,9 @@ function ucf_vertical_slide_shortcode( $atts ) {
 	<div id="slider-pagination"></div>
 	</div>
 	<?php
- echo $my_json_data;
+
+
+
 	return ob_get_clean();
 }
 }
@@ -38,4 +38,6 @@ function ucf_vertical_slide_shortcode( $atts ) {
 
 // Register the shortcode
 add_shortcode( 'ucf_vertical_slide', 'ucf_vertical_slide_shortcode' );
+
+
 ?>

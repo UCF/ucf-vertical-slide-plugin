@@ -34,7 +34,7 @@
 			'show_in_rest'  => true,
 			'rest_base'     => 'vertical_slider',
 		);
-		register_post_type('vertical sliders', $args);
+		register_post_type('vertical_slider', $args);
 
 	}
 
