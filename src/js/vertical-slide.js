@@ -28,7 +28,6 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
   }
 
   const slidesArray = slider.custom_rest_api;
-  console.log(slidesArray);
 
   // Variables
   const slides = [];
