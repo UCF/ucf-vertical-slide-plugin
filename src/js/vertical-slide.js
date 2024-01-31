@@ -3,8 +3,14 @@ const sliderContext = document.querySelector('#slider-context');
 const sliderPagination = document.querySelector('#slider-pagination');
 const shortCodeId = sliderContext.getAttribute('data-shortcode-id');
 const shortCodeSlug = sliderContext.getAttribute('data-shortcode-slug');
+const slides = [];
 
-// Fetching the data with id
+let counter = 0;
+let pagination = '';
+let circleBehavior = '';
+let scrolling = false;
+
+// Async function of fetching data with id or slug.
 const fetchSliderData = async (id, slug) => {
   if (id) {
     const response = await fetch(`http://localhost/wp-local/wp-json/wp/v2/vertical_slider/${id}?_fields=custom_rest_api`);
@@ -19,21 +25,16 @@ const fetchSliderData = async (id, slug) => {
   return null;
 };
 
-// After Fetching the slider ->
+// Fetching initiation
 fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
 
+  // Check if the response is any false value.
   if (!slider) {
     console.error('[ucf_vertical_slide] Please provide either the correct Shortcode ID or Shortcode Slug.');
     return;
   }
 
   const slidesArray = slider.custom_rest_api;
-
-  // Variables
-  const slides = [];
-  let counter = 0;
-  let pagination = '';
-  let circleBehavior = '';
 
   // Controllers
   slidesArray.forEach((element) => {
@@ -67,7 +68,6 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
   paginationFunc(counter);
 
   // scrolling Function
-  let scrolling = false;
 
   const scrollFunc = (event) => {
   // Check if scrolling action is in progress
@@ -76,7 +76,6 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
     }
     // Set the scrolling flag to true
     scrolling = true;
-
     let newCounter;
 
     if (event.deltaY > 0 && counter < slides.length - 1) {
@@ -98,7 +97,7 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
     }, 1500); // 1000 milliseconds (1 second) delay
   };
 
-  document.addEventListener('wheel', scrollFunc);
+  sliderContext.addEventListener('wheel', scrollFunc);
 
 });
 
