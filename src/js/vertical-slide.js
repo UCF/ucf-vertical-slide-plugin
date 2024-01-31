@@ -6,7 +6,6 @@ const shortCodeSlug = sliderContext.getAttribute('data-shortcode-slug');
 
 // Fetching the data with id
 const fetchSliderData = async (id, slug) => {
-  console.log(id, ' ', slug);
   if (id) {
     const response = await fetch(`http://localhost/wp-local/wp-json/wp/v2/vertical_slider/${id}?_fields=custom_rest_api`);
     const data = await response.json();
@@ -16,6 +15,8 @@ const fetchSliderData = async (id, slug) => {
     const data = await response.json();
     return data[0];
   }
+
+  return null;
 };
 
 // After Fetching the slider ->
