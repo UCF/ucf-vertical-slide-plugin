@@ -22,7 +22,9 @@ include_once 'includes/ucf-vertical-slider-posttype.php';
 // Shortcode function
 include_once 'includes/ucf-vertical-slide-shortcode.php';
 // Adding assets (CSS/ JS)
-include_once 'includes/ucf-vertical-slide-assets.php'
+include_once 'includes/ucf-vertical-slide-assets.php';
+// Adding custom restAPI fields
+include_once 'includes/custom-rest-api.php';
 ?>
 
 

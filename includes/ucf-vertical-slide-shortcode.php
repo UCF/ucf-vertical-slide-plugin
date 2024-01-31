@@ -18,7 +18,7 @@ if ( ! function_exists( 'ucf_vertical_slide_shortcode' ) )
 				?>
 
 				<div class="container-fluid bg-inverse">
-				<div id="slider-context" data-shortcode-id="<?php echo $slider_id?>" data-shortcode-slug="<?php echo $slider_slug ?>" class="row overflow slider-parent-row" onmousewheel="scrollFunc(event)">
+				<div id="slider-context" data-shortcode-id="<?php echo $slider_id; ?>" data-shortcode-slug="<?php echo $slider_slug; ?>" class="row overflow slider-parent-row" onmousewheel="scrollFunc(event)">
 					<!-- Content will be dynamically inserted here -->
 				</div>
 				<div id="slider-pagination"></div>
