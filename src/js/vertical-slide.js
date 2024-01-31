@@ -6,16 +6,28 @@ const shortCodeSlug = sliderContext.getAttribute('data-shortcode-slug');
 
 // Fetching the data with id
 const fetchSliderData = async (id, slug) => {
-  const response = await fetch(`http://localhost/wp-local/wp-json/wp/v2/vertical_slider/${id}?_fields=id,acf`);
-  const data = await response.json();
-  return data;
+  if (id) {
+    const response = await fetch(`http://localhost/wp-local/wp-json/wp/v2/vertical_slider/${id}?_fields=custom_rest_api`);
+    const data = await response.json();
+    return data;
+  } else if (!id && slug) {
+    const response = await fetch(`http://localhost/wp-local/wp-json/wp/v2/vertical_slider?slug=${slug}&_fields=custom_rest_api`);
+    const data = await response.json();
+    return data[0];
+  }
+
+  return null;
 };
 
 // After Fetching the slider ->
-fetchSliderData(shortCodeId).then((slider) => {
+fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
 
-  const slidesArray = slider.acf.vertical_sliders_fields;
-  console.log(slidesArray);
+  if (!slider) {
+    console.error('[ucf_vertical_slide] Please provide either the correct Shortcode ID or Shortcode Slug.');
+    return;
+  }
+
+  const slidesArray = slider.custom_rest_api;
 
   // Variables
   const slides = [];
@@ -27,7 +39,7 @@ fetchSliderData(shortCodeId).then((slider) => {
   slidesArray.forEach((element) => {
     const slide = `
       <div class="col-xs-12 col-lg-6 text-center text-light h-100">
-          <img class="slider-image" src="${element.image_url}" alt="${element.title}"   />
+          <img class="slider-image" src="${element.img_url}" alt="${element.title}"   />
       </div>
       <div  class="col-xs-0 col-lg-6 text-light slider-text-box">
           <p class="employee-name display-4 font-weight-bold text-primary">${element.title}</p>
