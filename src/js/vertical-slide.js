@@ -22,6 +22,11 @@ const fetchSliderData = async (id, slug) => {
 // After Fetching the slider ->
 fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
 
+  if (!slider) {
+    console.error('[ucf_vertical_slide] Please provide either the correct Shortcode ID or Shortcode Slug.');
+    return;
+  }
+
   const slidesArray = slider.custom_rest_api;
   console.log(slidesArray);
 
