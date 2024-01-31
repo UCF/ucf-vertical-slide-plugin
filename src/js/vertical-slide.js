@@ -12,19 +12,35 @@ let scrolling = false;
 
 // Async function of fetching data with id or slug.
 const fetchSliderData = async (id, slug) => {
-  if (id) {
-    const response = await fetch(`http://localhost/wp-local/wp-json/wp/v2/vertical_slider/${id}?_fields=custom_rest_api`);
-    const data = await response.json();
-    return data;
-  } else if (!id && slug) {
-    const response = await fetch(`http://localhost/wp-local/wp-json/wp/v2/vertical_slider?slug=${slug}&_fields=custom_rest_api`);
-    const data = await response.json();
-    return data[0];
+
+  try {
+    if (id) {
+      const response = await fetch(`http://localhost/wp-local/wp-json/wp/v2/vertical_slider/${id}?_fields=custom_rest_api`);
+      if (!response.ok) {
+        throw new Error(`Error fetching data. HTTP status ${response.status}`);
+      }
+      const data = await response.json();
+      return data;
+
+    } else if (!id && slug) {
+      const response = await fetch(`http://localhost/wp-local/wp-json/wp/v2/vertical_slider?slug=${slug}&_fields=custom_rest_api`);
+      if (!response.ok) {
+        throw new Error(`Error fetching data. HTTP status ${response.status}`);
+      }
+      const data = await response.json();
+
+      if (data && data.length > 0) {
+        return data[0];
+      }
+      throw new Error(`No data found for slug ${slug}`);
+
+    }
+    return null;
+  } catch (error) {
+    console.error('Fetch error:', error.message);
+    throw error;
   }
-
-  return null;
 };
-
 // Fetching initiation
 fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
 
