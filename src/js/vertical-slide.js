@@ -114,10 +114,9 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
 
   sliderContext.addEventListener('wheel', scrollFunc);
 
-// Disable scrolling behavior when the mouse enters the sliderContext area, and enable it when the mouse leaves.
-const terminateScroll = (counterObj, slides, activateScroll) => {
+  // Disable scrolling behavior when the mouse enters the sliderContext area, and enable it when the mouse leaves.
+  const terminateScroll = (counterObj, slides, activateScroll) => {
     if (counterObj.value > 0 && counterObj.value < slides.length - 1) {
-      console.log(`${counterObj.value} ${slides.length}`);
       document.body.style.overflow = 'hidden';
       return;
     }
