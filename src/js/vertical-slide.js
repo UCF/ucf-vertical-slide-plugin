@@ -128,6 +128,6 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
   };
 
   // Add the event listener after the function declaration
-  sliderContext.parentElement.addEventListener('mouseleave', activateScroll);
-  sliderContext.parentElement.addEventListener('mouseover', () => terminateScroll(counterObj, slides, activateScroll));
+  sliderContext.addEventListener('mouseleave', activateScroll);
+  sliderContext.addEventListener('mouseenter', () => terminateScroll(counterObj, slides, activateScroll));
 });
