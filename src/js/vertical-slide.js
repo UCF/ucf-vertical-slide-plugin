@@ -1,6 +1,6 @@
 // Variables
-/* global mysiteobj */
-const siteURL = mysiteobj.siteurl;
+/* global VERTICAL_SLIDER */
+const siteURL = VERTICAL_SLIDER.rest_url;
 
 const sliderContext = document.querySelector('#slider-context');
 const sliderPagination = document.querySelector('#slider-pagination');
@@ -20,14 +20,14 @@ let scrolling = false;
 const fetchSliderData = async (id, slug) => {
   try {
     if (id) {
-      const response = await fetch(`${siteURL}/wp-json/wp/v2/vertical_slider/${id}?_fields=custom_rest_api`);
+      const response = await fetch(`${siteURL}wp/v2/vertical_slider/${id}?_fields=custom_rest_api`);
       if (!response.ok) {
         throw new Error(`Error fetching data. HTTP status ${response.status}`);
       }
       const data = await response.json();
       return data;
     } else if (!id && slug) {
-      const response = await fetch(`${siteURL}/wp-json/wp/v2/vertical_slider?slug=${slug}&_fields=custom_rest_api`);
+      const response = await fetch(`${siteURL}wp/v2/vertical_slider?slug=${slug}&_fields=custom_rest_api`);
       if (!response.ok) {
         throw new Error(`Error fetching data. HTTP status ${response.status}`);
       }
