@@ -1,5 +1,7 @@
 // Variables
-const hostName = location.hostname;
+/* global mysiteobj */
+const siteURL = mysiteobj.siteurl;
+
 const sliderContext = document.querySelector('#slider-context');
 const sliderPagination = document.querySelector('#slider-pagination');
 const shortCodeId = sliderContext.getAttribute('data-shortcode-id');
@@ -8,8 +10,6 @@ const slides = [];
 const counterObj = {
   value: 0
 };
-const siteURL = site_url.siteurl;
-
 
 let pagination = '';
 let circleBehavior = '';
