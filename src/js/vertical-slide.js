@@ -68,7 +68,7 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
   });
   sliderContext.innerHTML = slides[counterObj.value];
 
-  // Events
+  // Events /////////////////////
   // Pagination Function
   const paginationFunc = (counter) => {
     pagination = '';
@@ -127,7 +127,28 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
     document.body.style.overflow = 'visible';
   };
 
+
+  // Key Up Down Functions
+  const keyPress = (event) => {
+    let flag = true;
+
+    if (event.key === 'ArrowUp' && counterObj.value > 0) {
+      counterObj.value--;
+    } else if (event.key === 'ArrowDown' && counterObj.value < slides.length - 1) {
+      counterObj.value++;
+    } else {
+      flag = false;
+    }
+
+    if (flag) {
+      sliderContext.innerHTML = slides[counterObj.value];
+      paginationFunc(counterObj.value);
+    }
+  };
+
+
   // Add the event listener after the function declaration
+  document.addEventListener('keydown', keyPress);
   sliderContext.addEventListener('mouseleave', activateScroll);
   sliderContext.addEventListener('mouseenter', () => terminateScroll(counterObj, slides, activateScroll));
 });
