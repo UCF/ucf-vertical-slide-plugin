@@ -9,6 +9,8 @@ function ucf_vertical_slide_enqueue_assets() {
 
     // Enqueue scripts
     wp_enqueue_script( 'ucf-vertical-slide-script', UCF_VERTICAL_SLIDE__STATIC_URL . '/js/script.min.js', array( 'jquery' ), $version, true );
+	wp_localize_script('ucf-vertical-slide-script', 'site_url', array( 'siteurl' => get_option('siteurl') ));
+
 
 }
 
