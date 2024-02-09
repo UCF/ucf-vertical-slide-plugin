@@ -10,6 +10,8 @@ const slides = [];
 const counterObj = {
   value: 0
 };
+let touchStart = 0;
+let touchEnd = 0;
 
 let pagination = '';
 let circleBehavior = '';
@@ -150,8 +152,50 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
   };
 
 
+  let isFirstTouch = true; // Flag to track the first touch
+
+  // touch start Func
+  const touchStartFunc = (e) => {
+    touchStart = e.changedTouches[0].clientY;
+    // Prevent default touch behavior (scrolling)
+    if (isFirstTouch || counterObj.value < slides.length - 1 && counterObj.value > 0) {
+      e.preventDefault();
+      isFirstTouch = false; // Set flag to false after the first touch
+    }
+
+
+  };
+
+  // Touch end Func
+  const touchEndFunc = (e) => {
+    touchEnd = e.changedTouches[0].clientY;
+
+    if (touchEnd < touchStart) {
+      if (counterObj.value < slides.length - 1) {
+        counterObj.value++;
+        sliderContext.innerHTML = slides[counterObj.value]; // Update slide content
+        paginationFunc(counterObj.value); // Update pagination
+      } else {
+        isFirstTouch = true;
+      }
+    } else if (touchEnd > touchStart) {
+      if (counterObj.value > 0) {
+        counterObj.value--;
+        sliderContext.innerHTML = slides[counterObj.value]; // Update slide content
+        paginationFunc(counterObj.value); // Update pagination
+      } else {
+        isFirstTouch = true;
+      }
+    }
+  };
+
   // Add the event listener after the function declaration
   document.addEventListener('keydown', keyPress);
+
   sliderContext.addEventListener('mouseleave', activateScroll);
   sliderContext.addEventListener('mouseenter', () => terminateScroll(counterObj, slides, activateScroll));
+
+  sliderContext.addEventListener('touchstart', touchStartFunc);
+  sliderContext.addEventListener('touchend', touchEndFunc);
 });
+
