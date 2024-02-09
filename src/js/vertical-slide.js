@@ -162,8 +162,6 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
       e.preventDefault();
       isFirstTouch = false; // Set flag to false after the first touch
     }
-
-
   };
 
   // Touch end Func
