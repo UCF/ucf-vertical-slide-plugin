@@ -81,7 +81,7 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
     slides.forEach((element, index) => {
       circleBehavior = index === counter ? 'yellow' : 'white';
       pagination += `<svg style="display:block" height="30" width="30">
-          <circle cx="15" cy="15" r="4" stroke-width="1" fill="${circleBehavior}" />
+          <circle cx="15" cy="15" r="4" fill="${circleBehavior}" />
       </svg>`;
     });
     sliderPagination.innerHTML = pagination;
