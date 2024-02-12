@@ -72,15 +72,6 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
     slides.push(slide);
   });
 
-  // Set initial opacity to 0
-  sliderContext.style.opacity = '0';
-
-  sliderContext.innerHTML = slides[counterObj.value];
-
-  setTimeout(() => {
-    sliderContext.style.opacity = '1';
-  }, 100); // Delay for smoother transition
-
   // Events /////////////////////
   // Pagination Function
   const paginationFunc = (counter) => {
