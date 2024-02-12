@@ -71,7 +71,15 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
 
     slides.push(slide);
   });
+
+  // Set initial opacity to 0
+  sliderContext.style.opacity = '0';
+
   sliderContext.innerHTML = slides[counterObj.value];
+
+  setTimeout(() => {
+    sliderContext.style.opacity = '1';
+  }, 100); // Delay for smoother transition
 
   // Events /////////////////////
   // Pagination Function
@@ -79,8 +87,8 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
     pagination = '';
     slides.forEach((element, index) => {
       circleBehavior = index === counter ? 'yellow' : 'white';
-      pagination += `<svg style="display:block" height="50" width="50">
-          <circle cx="25" cy="25" r="5" stroke="black" stroke-width="1" fill="${circleBehavior}" />
+      pagination += `<svg style="display:block" height="30" width="30">
+          <circle cx="15" cy="15" r="4" stroke-width="1" fill="${circleBehavior}" />
       </svg>`;
     });
     sliderPagination.innerHTML = pagination;
