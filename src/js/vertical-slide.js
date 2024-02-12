@@ -72,6 +72,8 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
     slides.push(slide);
   });
 
+  sliderContext.innerHTML = slides[counterObj.value];
+
   // Events /////////////////////
   // Pagination Function
   const paginationFunc = (counter) => {
