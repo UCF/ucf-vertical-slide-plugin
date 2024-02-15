@@ -2,7 +2,7 @@
 /*
 Plugin Name: UCF Vertical Slide Plugin
 Description: Custom vertical slide plugin for UCF.
-Version: 1.0.0
+Version: 0.1.0
 Author: UCF Web Communications
 License: GPL3
 GitHub Plugin URI: UCF/ucf-vertical-slide-plugin
