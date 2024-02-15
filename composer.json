@@ -1,0 +1,8 @@
+{
+    "name": "ucf/ucf-vertical-slide-plugin",
+    "description": "Vertical slide plugin retrieves data, including image URL, title, subtitle, and description, from ACF Pro. Users can change slides by scrolling the mouse wheel on desktops or by touching on mobile phones.",
+    "type": "wordpress-plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
