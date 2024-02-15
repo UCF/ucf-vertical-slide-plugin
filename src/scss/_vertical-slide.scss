@@ -29,6 +29,7 @@
 
 #slider-pagination {
   position: absolute;
+  padding-right: 0;
   top: 50%;
   right: 0;
   transform: translate(-50%, -50%);
@@ -37,7 +38,6 @@
 @media only screen and (max-width: 990px) {
   .slider-parent-row {
       position: relative;
-      height: 500px !important;
   }
   .slider-parent-row img {
       width: 100%;
@@ -48,7 +48,7 @@
   }
   .slider-text-box {
       position: absolute !important;
-      bottom: 0px;
+      bottom: 10%;
       padding: 10px;
       text-align: center;
   }
@@ -67,12 +67,5 @@
   }
   .employee-desc {
       font-size: 15px;
-  }
-  #slider-pagination {
-      top: 23%;
-      right: -5%;
-  }
-  .slider-parent-row {
-    height: 380px !important;
   }
 }
