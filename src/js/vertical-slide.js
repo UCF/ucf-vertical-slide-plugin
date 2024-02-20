@@ -192,9 +192,7 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
   document.addEventListener('keydown', keyPress);
 
   sliderContext.addEventListener('mouseleave', activateScroll);
-  sliderContext.addEventListener('mouseenter', () => {
-    terminateScroll(counterObj, slides, activateScroll); console.log('mouse entered');
-  });
+  sliderContext.addEventListener('mouseenter', () => terminateScroll(counterObj, slides, activateScroll));
 
   sliderContext.addEventListener('touchstart', touchStartFunc);
   sliderContext.addEventListener('touchend', touchEndFunc);
