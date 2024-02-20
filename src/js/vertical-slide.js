@@ -3,6 +3,7 @@
 const siteURL = VERTICAL_SLIDER.rest_url;
 
 const sliderContext = document.querySelector('#slider-context');
+const sliderParent = document.querySelector('.slider-parent');
 const sliderPagination = document.querySelector('#slider-pagination');
 const shortCodeId = sliderContext.getAttribute('data-shortcode-id');
 const shortCodeSlug = sliderContext.getAttribute('data-shortcode-slug');
@@ -192,7 +193,9 @@ fetchSliderData(shortCodeId, shortCodeSlug).then((slider) => {
   document.addEventListener('keydown', keyPress);
 
   sliderContext.addEventListener('mouseleave', activateScroll);
-  sliderContext.addEventListener('mouseenter', () => terminateScroll(counterObj, slides, activateScroll));
+  sliderContext.addEventListener('mouseenter', () => {
+    terminateScroll(counterObj, slides, activateScroll); console.log('mouse entered');
+  });
 
   sliderContext.addEventListener('touchstart', touchStartFunc);
   sliderContext.addEventListener('touchend', touchEndFunc);
