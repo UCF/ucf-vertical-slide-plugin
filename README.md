@@ -35,11 +35,11 @@ Note that compiled, minified css and js files are included within the repo.  Cha
 * WordPress installation
 * node v16+
 * gulp-cli
-* Advanced Custom Fields Pro (ACF Pro) plugin
+* [Advanced Custom Fields Pro (ACF Pro) plugin](https://www.advancedcustomfields.com/pro/)
 
 
 ### Instructions ###
-1. Clone the ucf-vertical-slide-plugin repo into your local development environment, within your WordPress installation's `plugins/` directory: `git clone https://github.com/UCF/ucf-vertical-slide-plugin.git`
+1. You can download the plugin from [here](https://github.com/UCF/ucf-vertical-slide-plugin/archive/refs/heads/main.zip) and install it in your Wordpress directly or Clone the ucf-vertical-slide-plugin [repo](https://github.com/UCF/ucf-vertical-slide-plugin) into your local development environment, within your WordPress installation's plugins/ directory: git clone https://github.com/UCF/ucf-vertical-slide-plugin.git
 2. `cd` into the new ucf-vertical-slide-plugin directory, and run `npm install` to install required packages for development into `node_modules/` within the repo
 3. Ensure ACF Pro is installed and activated in your WordPress.
 5. Activate this plugin on your development WordPress site.
