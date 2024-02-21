@@ -4,7 +4,7 @@ Custom vertical slider plugin for UCF.
 
 ## Description ##
 
-Vertical custom slider retrieves data, including image URL, title, subtitle, and description, from ACF Pro. Users can change slides by scrolling the mouse wheel on desktops or by touching on mobile phones. It's essential to have the ACF Pro plugin installed to use this feature.
+The Vertical Slide Plugin is a powerful tool for WordPress that allows you to easily create sliders on the frontend of your website. With its custom post type feature, you can seamlessly add and manage sliders with ease.
 
 ## Documentation ##
 
@@ -32,21 +32,18 @@ Note that compiled, minified css and js files are included within the repo.  Cha
 [Enabling debug mode](https://codex.wordpress.org/Debugging_in_WordPress) in your `wp-config.php` file is recommended during development to help catch warnings and bugs.
 
 ### Requirements ###
+* WordPress installation
 * node v16+
 * gulp-cli
+* [Advanced Custom Fields Pro (ACF Pro) plugin](https://www.advancedcustomfields.com/pro/)
+
 
 ### Instructions ###
-1. Clone the ucf-vertical-slide-plugin repo into your local development environment, within your WordPress installation's `plugins/` directory: `git clone https://github.com/UCF/ucf-vertical-slide-plugin.git`
+1. You can download the plugin from [here](https://github.com/UCF/ucf-vertical-slide-plugin/archive/refs/heads/main.zip) and install it in your Wordpress directly or Clone the ucf-vertical-slide-plugin [repo](https://github.com/UCF/ucf-vertical-slide-plugin) into your local development environment, within your WordPress installation's plugins/ directory: git clone https://github.com/UCF/ucf-vertical-slide-plugin.git
 2. `cd` into the new ucf-vertical-slide-plugin directory, and run `npm install` to install required packages for development into `node_modules/` within the repo
-3. Optional: If you'd like to enable [BrowserSync](https://browsersync.io) for local development, or make other changes to this project's default gulp configuration, copy `gulp-config.template.json`, make any desired changes, and save as `gulp-config.json`.
-
-    To enable BrowserSync, set `sync` to `true` and assign `syncTarget` the base URL of a site on your local WordPress instance that will use this plugin, such as `http://localhost/wordpress/my-site/`.  Your `syncTarget` value will vary depending on your local host setup.
-
-    The full list of modifiable config values can be viewed in `gulpfile.js` (see `config` variable).
-3. Run `gulp default` to process front-end assets.
-4. If you haven't already done so, create a new WordPress site on your development environment to test this plugin against, and [install and activate all plugin dependencies](https://github.com/UCF/ucf-vertical-slide-plugin/wiki/Installation#installation-requirements).
+3. Ensure ACF Pro is installed and activated in your WordPress.
 5. Activate this plugin on your development WordPress site.
-6. Configure plugin settings from the WordPress admin under "Vertical Slide Settings".
+6. Run `gulp default` to process front-end assets.
 7. Run `gulp watch` to continuously watch changes to scss and js files. If you enabled BrowserSync in `gulp-config.json`, it will also reload your browser when plugin files change.
 
 ### Other Notes ###
