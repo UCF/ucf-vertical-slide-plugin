@@ -13,7 +13,7 @@ Head over to the [ucf-vertical-slide-plugin wiki](https://github.com/UCF/ucf-ver
 
 ## Changelog ##
 
-### 0.1.1 ###
+### 0.2.0 ###
 * Added github packagist update action.
 
 ### 0.1.0 ###
